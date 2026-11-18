@@ -1,0 +1,10 @@
+# Vercel
+.vercel
+
+# OS / 에디터
+Thumbs.db
+.DS_Store
+.vscode/
+
+# 녹화 영상 등 참고용 대용량 파일
+*.mp4

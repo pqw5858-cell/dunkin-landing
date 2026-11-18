@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DUNKIN' | 오늘도 달콤한 순간</title>
+  <!-- 파비콘: 브라우저 탭(32/64) + 홈 화면·북마크용 큰 아이콘(512) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="images/favicon/favicon-64.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon/favicon-512.png">
+  <link rel="apple-touch-icon" href="images/favicon/favicon-512.png">
+  <!-- 푸터용 기본 고딕 (Noto Sans KR 400 / 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER (고정) ============ -->
+  <header class="header">
+    <h1 class="header__logo">
+      <a href="#products"><img src="images/logo.png" alt="DUNKIN'"></a>
+    </h1>
+    <nav class="gnb" aria-label="주요 메뉴">
+      <ul>
+        <li><a href="#products">PRODUCTS</a></li>
+        <li><a href="#brand">BRAND</a></li>
+        <li><a href="#store">STORE</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ MAIN VISUAL (PRODUCTS) ============ -->
+    <section class="visual" id="products" aria-label="제품 소개">
+
+      <!-- 제품별 slide (배경 + 재료 + 도넛), JS로 생성 -->
+      <div class="visual__slides" aria-hidden="true"></div>
+
+      <!-- 텍스트 + 제품 메뉴 (시안 1920x1000 기준 stage) -->
+      <div class="visual__stage stage">
+        <div class="mask mask--title"></div>
+        <div class="mask mask--info"></div>
+        <div class="visual__btns">
+          <button type="button" class="visual__btn visual__btn--store" data-info="store">판매 매장 보기</button>
+          <button type="button" class="visual__btn visual__btn--nutrition" data-info="nutrition">영양 정보</button>
+        </div>
+
+        <div class="product-menu">
+          <ul class="product-menu__list"></ul>
+          <span class="product-menu__line" aria-hidden="true"></span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 메인 비주얼 → BRAND 이음새: 현재 제품 색에서 흰색으로 그라데이션 -->
+    <div class="visual-fade" aria-hidden="true"></div>
+
+    <!-- ============ BRAND ============ -->
+    <section class="brand" id="brand" aria-labelledby="brand-title">
+
+      <!-- ① 히스토리 -->
+      <div class="brand-history" id="history">
+        <h2 class="brand__title" id="brand-title" data-reveal>BRAND</h2>
+        <div class="brand-banner">
+          <div class="brand-banner__inner">
+            <img class="brand-banner__eng" src="images/brand/banner-text.png" alt="MORE TASTY, MORE FRESH DUNKIN" data-reveal>
+            <p class="brand-banner__sub" data-reveal style="--delay: .1s">오늘도 달콤한 순간, DUNKIN'!</p>
+            <p class="brand-banner__desc" data-reveal style="--delay: .2s">
+              미국의 배우 메이 머레이가 우연히 도넛을 커피에 빠뜨리면서 발견한 환상적인 맛!<br>
+              커피에 '담그다'라는 뜻의 'dunk in'에서 시작된 던킨은 70년 넘게 달콤한 도넛과 향긋한 커피로 일상 속 작은 행복을 전하고 있어요.<br>
+              오늘도 던킨에서 특별하고 달콤한 순간을 만나보세요!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ①-2 Our Mission -->
+      <div class="brand-mission">
+        <img class="deco deco--glazed" src="images/brand/deco-glazed.png" alt="" aria-hidden="true">
+        <img class="brand-mission__choco brand-mission__choco--1" src="images/ingredient/cookie-white-cream/choco-02.png" alt="" aria-hidden="true">
+        <img class="brand-mission__choco brand-mission__choco--2" src="images/ingredient/cookie-white-cream/choco-04.png" alt="" aria-hidden="true">
+        <div class="brand-mission__inner" data-reveal>
+          <p class="brand-mission__label">Our Mission</p>
+          <p class="brand-mission__copy">
+            좋은 재료와 특별한 레시피로<br>
+            <em>매일 더 맛있는 즐거움을 만듭니다.</em>
+          </p>
+        </div>
+      </div>
+
+      <!-- ② 도넛 만드는 과정 -->
+      <div class="brand-process" id="process">
+        <img class="deco deco--process-choco" src="images/brand/deco-munchkin-choco.png" alt="" aria-hidden="true">
+        <div class="section-head" data-reveal>
+          <h3 class="section-head__title">
+            How Dunkin<br><em>Makes Donuts</em>
+          </h3>
+          <p class="section-head__sub">던킨의 도넛이 완성되는 특별한 과정</p>
+          <svg class="deco-smile" viewBox="0 0 60 16" aria-hidden="true"><path d="M4 4 Q30 22 56 4"/></svg>
+        </div>
+
+        <!-- 카드 + 이전/다음 버튼을 한 덩어리로 등장 -->
+        <div class="process-wrap" data-reveal style="--delay: .1s">
+        <ol class="process"></ol>
+
+        <div class="process-nav">
+          <button type="button" class="process-nav__btn process-nav__btn--prev" aria-label="이전 단계">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 L8 12 L15 19"/></svg>
+          </button>
+          <div class="process-nav__dots" role="tablist" aria-label="도넛 만드는 과정 단계"></div>
+          <button type="button" class="process-nav__btn process-nav__btn--next" aria-label="다음 단계">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5 L16 12 L9 19"/></svg>
+          </button>
+        </div>
+        </div>
+      </div>
+
+      <!-- ③ 고객과의 3가지 약속 -->
+      <div class="brand-promise" id="promise">
+        <img class="deco deco--promise-glazed" src="images/brand/deco-munchkin-glazed.png" alt="" aria-hidden="true">
+        <img class="deco deco--promise-choco" src="images/brand/deco-munchkin-choco.png" alt="" aria-hidden="true">
+        <div class="section-head" data-reveal>
+          <h3 class="section-head__title">Our <em>Promise</em></h3>
+          <p class="section-head__sub">던킨이 말하는 고객과의 3가지 약속</p>
+        </div>
+        <ul class="promise">
+          <li class="promise__item" data-reveal style="--delay: 0s">
+            <span class="promise__num">01</span>
+            <strong class="promise__eng">Better<br>Ingredients</strong>
+            <p class="promise__kor">좋은 원료에 대한 엄격한 기준</p>
+            <p class="promise__tags">#인공색소 사용 불가<br>#GMO FREE<br>#트랜스지방 FREE 오일</p>
+          </li>
+          <li class="promise__item" data-reveal style="--delay: .15s">
+            <span class="promise__num">02</span>
+            <strong class="promise__eng">More Sustainable<br>Ingredients</strong>
+            <p class="promise__kor">지속 가능한 지구를 위한 연구</p>
+            <p class="promise__tags">#지속가능한 팜오일<br>#레인포레스트 얼라이언스 인증 원두</p>
+            <img class="promise__icon" src="images/brand/promise-icon-02-white.png" alt="Rainforest Alliance Certified">
+          </li>
+          <li class="promise__item" data-reveal style="--delay: .3s">
+            <span class="promise__num">03</span>
+            <strong class="promise__eng">Dedicated to<br>Quality</strong>
+            <p class="promise__kor">식품 안전과 품질에 대한 섬세한 관리</p>
+            <p class="promise__tags">#HACCP 인증<br>#FSSC 22000 인증</p>
+            <div class="promise__icons">
+              <img class="promise__icon promise__icon--haccp" src="images/brand/promise-icon-haccp-white.png" alt="HACCP">
+              <img class="promise__icon promise__icon--fssc" src="images/brand/promise-icon-fssc-white.png" alt="FSSC 22000">
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- ④ 위생점검 결과 -->
+      <div class="brand-safety" id="safety">
+        <img class="deco deco--safety-chewisty" src="images/brand/deco-chewisty.png" alt="" aria-hidden="true">
+        <img class="deco deco--safety-glazed" src="images/brand/deco-munchkin-glazed.png" alt="" aria-hidden="true">
+        <div class="section-head" data-reveal>
+          <h3 class="section-head__title">Food <em>Safety</em></h3>
+          <p class="section-head__sub">던킨 생산센터 위생점검 결과</p>
+          <p class="section-head__desc">던킨은 모든 생산 공장에서 공신력 있는 외부 위생인증 기관의 점검을 완료했습니다.</p>
+        </div>
+        <ul class="safety">
+          <li class="safety__card" data-reveal style="--delay: 0s">
+            <img class="safety__logo" src="images/brand/cert-logo-bsi.png" alt="BSI">
+            <p class="safety__badge">FSSC 22000</p>
+            <h4 class="safety__name">BSI 식품안전 인증</h4>
+            <p class="safety__desc">100년 넘게 전 세계 기업의 품질·위생을 점검해 온<br>영국 표준 협회(BSI)로부터 국제 식품안전<br>경영시스템 FSSC 22000 인증을 받았습니다.</p>
+            <button type="button" class="safety__btn" data-cert="images/brand/cert-bsi.png" data-cert-title="BSI FSSC 22000 인증서">인증서 보기</button>
+          </li>
+          <li class="safety__card" data-reveal style="--delay: .15s">
+            <img class="safety__logo" src="images/brand/cert-logo-haccp.png" alt="HACCP">
+            <p class="safety__badge">HACCP</p>
+            <h4 class="safety__name">HACCP 적용업소 인증</h4>
+            <p class="safety__desc">식품의약품안전처 산하 한국식품안전관리인증원으로부터<br>원료부터 생산까지 위해요소를 관리하는<br>HACCP 적용업소 인증을 받았습니다.</p>
+            <button type="button" class="safety__btn" data-cert="images/brand/cert-haccp.png" data-cert-title="HACCP 적용업소 인증서">인증서 보기</button>
+          </li>
+          <li class="safety__card" data-reveal style="--delay: .3s">
+            <img class="safety__logo" src="images/brand/cert-logo-nsf.png" alt="NSF">
+            <p class="safety__badge">92.8점</p>
+            <h4 class="safety__name">NSF 위생 점검 통과</h4>
+            <p class="safety__desc">미국 위생안전 인증기관 NSF의 55개 항목 점검에서<br>안양 공장을 포함한 5개 공장 모두<br>90% 이상의 높은 점수로 통과했습니다.</p>
+            <button type="button" class="safety__btn" data-cert="images/brand/cert-nsf.png" data-cert-title="NSF 위생 점검 결과">인증서 보기</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ STORE ============ -->
+    <section class="store" id="store" aria-labelledby="store-title">
+      <!-- 장식 (먼치킨 + 재료 조각) -->
+      <img class="deco deco--store-1" src="images/brand/deco-munchkin-glazed.png" alt="" aria-hidden="true">
+      <img class="deco deco--store-2" src="images/ingredient/raspberry-pistachio/pistachio-01.png" alt="" aria-hidden="true">
+      <img class="deco deco--store-3" src="images/brand/deco-munchkin-choco.png" alt="" aria-hidden="true">
+      <img class="deco deco--store-4" src="images/ingredient/lemon-cream-brulee/cream-03.png" alt="" aria-hidden="true">
+      <img class="deco deco--store-5" src="images/ingredient/blueberry-cheesecake/cheesecake-01.png" alt="" aria-hidden="true">
+
+      <div class="store__inner">
+        <!-- 원형 사진 2장 (사진 준비 전까지 비워둠) -->
+        <div class="store__photos" data-reveal>
+          <div class="store__photo store__photo--inside"></div>
+          <div class="store__photo store__photo--outside"></div>
+        </div>
+
+        <div class="store__text" data-reveal style="--delay: .15s">
+          <h2 class="store__title" id="store-title">전국 어디에서나 <strong>던킨과 함께!</strong></h2>
+          <p class="store__sub">가까운 던킨에서 달콤한 하루를 시작해보세요.</p>
+          <p class="store__desc">
+            매장에서 갓 만든 도넛을 만나는 <strong>던킨 원더스</strong><br>
+            커피와 도넛을 여유롭게 즐기는 <strong>카페형 매장</strong><br>
+            바쁜 일상 속 간편하게 들르는 <strong>테이크아웃 매장</strong>까지.
+          </p>
+          <p class="store__desc">다양한 던킨 매장이 여러분을 기다립니다.</p>
+          <button type="button" class="store__btn" data-open-store>매장 찾기</button>
+        </div>
+      </div>
+
+      <!-- 매장 건물 일러스트 -->
+      <img class="store__building" src="images/store/store-illustration.svg" alt="" aria-hidden="true">
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__info">
+        <a href="#products" class="footer__logo" aria-label="DUNKIN' 맨 위로"></a>
+        <p class="footer__notice">
+          본 사이트는 개인 포트폴리오 목적으로 제작된 <strong>비상업적 사이트</strong>이며,<br>
+          던킨(DUNKIN')의 공식 사이트가 아닙니다.<br>
+          사용된 브랜드명, 로고, 제품 이미지의 권리는 각 권리자에게 있습니다.
+        </p>
+        <p class="footer__copy">© 2026 DUNKIN' Landing Page · Portfolio Project</p>
+      </div>
+
+      <nav class="footer__sitemap" aria-label="사이트맵">
+        <div class="footer__col">
+          <h2 class="footer__col-title"><a href="#products">PRODUCTS</a></h2>
+          <ul>
+            <li><a href="#products" data-product="0">라즈베리 피스타치오</a></li>
+            <li><a href="#products" data-product="1">레몬 크림 브륄레</a></li>
+            <li><a href="#products" data-product="2">쿠키 앤 화이트 크림</a></li>
+            <li><a href="#products" data-product="3">블루베리 치즈케익</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2 class="footer__col-title"><a href="#brand">BRAND</a></h2>
+          <ul>
+            <li><a href="#history">HISTORY</a></li>
+            <li><a href="#process">HOW WE MAKE</a></li>
+            <li><a href="#promise">OUR PROMISE</a></li>
+            <li><a href="#safety">FOOD SAFETY</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h2 class="footer__col-title"><a href="#store">STORE</a></h2>
+          <ul>
+            <li><a href="#store" data-open-store>매장 찾기</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- 맨 위로 -->
+  <button type="button" class="top-btn" aria-label="맨 위로">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15 L12 8 L19 15"/></svg>
+  </button>
+
+  <!-- 제품별 판매 매장 / 영양 정보 모달 (내용은 js/main.js에서 제품에 맞게 생성) -->
+  <dialog class="info-modal" aria-labelledby="info-modal-title">
+    <div class="info-modal__body"></div>
+    <button type="button" class="info-modal__close">닫기</button>
+  </dialog>
+
+  <!-- 매장 찾기 지도 모달 -->
+  <dialog class="store-modal" aria-labelledby="store-modal-title">
+    <div class="store-modal__panel">
+      <div class="store-modal__head">
+        <h2 class="store-modal__title" id="store-modal-title">매장 찾기</h2>
+        <form class="store-search" role="search">
+          <input class="store-search__input" type="search" placeholder="지역명 또는 매장명 (예: 강남역)" aria-label="지역명 또는 매장명">
+          <button class="store-search__btn" type="submit" aria-label="검색">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 L21 21"/></svg>
+          </button>
+        </form>
+        <button type="button" class="store-locate">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2 v4 M12 18 v4 M2 12 h4 M18 12 h4"/></svg>
+          내 위치로 찾기
+        </button>
+        <p class="store-modal__count" aria-live="polite"></p>
+      </div>
+      <ul class="store-list"></ul>
+      <button type="button" class="store-more" hidden>매장 더보기</button>
+    </div>
+    <div class="store-modal__map">
+      <div class="store-map" id="store-map"></div>
+      <p class="store-map__notice" hidden></p>
+    </div>
+    <button type="button" class="store-modal__close" aria-label="닫기">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg>
+    </button>
+  </dialog>
+
+  <!-- 인증서 크게 보기 -->
+  <dialog class="cert-modal" aria-label="인증서">
+    <button type="button" class="cert-modal__close" aria-label="닫기">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18"/></svg>
+    </button>
+    <img class="cert-modal__img" src="" alt="">
+  </dialog>
+
+  <script src="js/main.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/sparkle.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" width="400" height="360" fill="none">
+  <defs>
+    <clipPath id="awningClip">
+      <path d="M50 108 H350 V148 q-18.75 16 -37.5 0 q-18.75 16 -37.5 0 q-18.75 16 -37.5 0 q-18.75 16 -37.5 0 q-18.75 16 -37.5 0 q-18.75 16 -37.5 0 q-18.75 16 -37.5 0 q-18.75 16 -37.5 0 Z"/>
+    </clipPath>
+    <clipPath id="winL">
+      <rect x="90" y="178" width="70" height="68" rx="16"/>
+    </clipPath>
+    <clipPath id="winR">
+      <rect x="240" y="178" width="70" height="68" rx="16"/>
+    </clipPath>
+  </defs>
+
+  <!-- ground shadow -->
+  <ellipse cx="200" cy="334" rx="152" ry="13" fill="#FBE0D5"/>
+
+  <!-- shop body -->
+  <rect x="66" y="130" width="268" height="194" rx="18" fill="#FFFFFF" stroke="#F4CDBC" stroke-width="3"/>
+
+  <!-- left window -->
+  <rect x="90" y="178" width="70" height="68" rx="16" fill="#FBE0D5"/>
+  <g clip-path="url(#winL)">
+    <path d="M100 250 L132 180" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+    <path d="M124 252 L148 198" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <rect x="90" y="178" width="70" height="68" rx="16" fill="none" stroke="#F4CDBC" stroke-width="2.5"/>
+
+  <!-- right window -->
+  <rect x="240" y="178" width="70" height="68" rx="16" fill="#FBE0D5"/>
+  <g clip-path="url(#winR)">
+    <path d="M250 250 L282 180" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" opacity="0.7"/>
+    <path d="M274 252 L298 198" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
+  </g>
+  <rect x="240" y="178" width="70" height="68" rx="16" fill="none" stroke="#F4CDBC" stroke-width="2.5"/>
+
+  <!-- door -->
+  <path d="M172 196 a28 28 0 0 1 56 0 V324 H172 Z" fill="#3B2B26"/>
+  <path d="M182 196 a18 18 0 0 1 36 0 V212 H182 Z" fill="#FBE0D5" opacity="0.35"/>
+  <circle cx="218" cy="264" r="4.5" fill="#FBE0D5"/>
+
+  <!-- step -->
+  <rect x="158" y="314" width="84" height="16" rx="8" fill="#FBE0D5"/>
+
+  <!-- awning -->
+  <g clip-path="url(#awningClip)">
+    <rect x="50" y="106" width="37.5" height="62" fill="#EE6B3E"/>
+    <rect x="87.5" y="106" width="37.5" height="62" fill="#FFF6F2"/>
+    <rect x="125" y="106" width="37.5" height="62" fill="#EE6B3E"/>
+    <rect x="162.5" y="106" width="37.5" height="62" fill="#FFF6F2"/>
+    <rect x="200" y="106" width="37.5" height="62" fill="#EE6B3E"/>
+    <rect x="237.5" y="106" width="37.5" height="62" fill="#FFF6F2"/>
+    <rect x="275" y="106" width="37.5" height="62" fill="#EE6B3E"/>
+    <rect x="312.5" y="106" width="37.5" height="62" fill="#FFF6F2"/>
+  </g>
+  <rect x="46" y="94" width="308" height="18" rx="9" fill="#E05A2E"/>
+
+  <!-- hanging round sign -->
+  <rect x="340" y="144" width="7" height="18" rx="3.5" fill="#E05A2E"/>
+  <circle cx="343.5" cy="181" r="19" fill="#EE6B3E"/>
+  <circle cx="343.5" cy="181" r="6.5" fill="#FFFFFF"/>
+  <rect x="331" y="170" width="3" height="7.5" rx="1.5" fill="#FFE4D8" transform="rotate(-25 332.5 173.75)"/>
+  <rect x="352" y="172" width="3" height="7.5" rx="1.5" fill="#FFE4D8" transform="rotate(30 353.5 175.75)"/>
+  <rect x="340" y="190" width="3" height="7.5" rx="1.5" fill="#FFE4D8" transform="rotate(-15 341.5 193.75)"/>
+
+  <!-- top sign board -->
+  <rect x="152" y="44" width="96" height="58" rx="18" fill="#FFFFFF" stroke="#EE6B3E" stroke-width="3.5"/>
+  <circle cx="200" cy="73" r="18" fill="#EE6B3E"/>
+  <circle cx="200" cy="73" r="6.5" fill="#FFFFFF"/>
+  <rect x="186" y="60" width="3" height="7.5" rx="1.5" fill="#FFE4D8" transform="rotate(-25 187.5 63.75)"/>
+  <rect x="209" y="62" width="3" height="7.5" rx="1.5" fill="#FFE4D8" transform="rotate(30 210.5 65.75)"/>
+  <rect x="197" y="83" width="3" height="7.5" rx="1.5" fill="#FFE4D8" transform="rotate(-10 198.5 86.75)"/>
+  <rect x="211" y="79" width="3" height="7.5" rx="1.5" fill="#FFE4D8" transform="rotate(45 212.5 82.75)"/>
+
+  <!-- A-board -->
+  <path d="M100 264 L140 264 L148 318 L92 318 Z" fill="#FFFFFF" stroke="#F4CDBC" stroke-width="2.5" stroke-linejoin="round"/>
+  <circle cx="120" cy="284" r="9.5" fill="#EE6B3E"/>
+  <circle cx="120" cy="284" r="3.5" fill="#FFFFFF"/>
+  <rect x="104" y="299" width="32" height="4.5" rx="2.25" fill="#FBE0D5"/>
+  <rect x="108" y="308" width="24" height="4.5" rx="2.25" fill="#FBE0D5"/>
+
+  <!-- takeaway cup -->
+  <path d="M300 266 q5 -5 0 -10" stroke="#F4CDBC" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M311 264 q5 -5 0 -10" stroke="#F4CDBC" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <rect x="290" y="274" width="32" height="13" rx="6" fill="#EE6B3E"/>
+  <path d="M294 288 L318 288 L313.5 318 L298.5 318 Z" fill="#FFFFFF" stroke="#F4CDBC" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M296.4 296 L315.6 296 L314 307 L298 307 Z" fill="#FBE0D5"/>
+
+  <!-- sparkles -->
+  <path d="M128 26 Q130 32 136 34 Q130 36 128 42 Q126 36 120 34 Q126 32 128 26 Z" fill="#F7C3AC"/>
+  <path d="M272 30 Q273.5 34.5 278 36 Q273.5 37.5 272 42 Q270.5 37.5 266 36 Q270.5 34.5 272 30 Z" fill="#F7C3AC"/>
+  <path d="M40 157 Q41.8 162.2 47 164 Q41.8 165.8 40 171 Q38.2 165.8 33 164 Q38.2 162.2 40 157 Z" fill="#F7C3AC"/>
+  <path d="M372 240 Q373.5 244.5 378 246 Q373.5 247.5 372 252 Q370.5 247.5 366 246 Q370.5 244.5 372 240 Z" fill="#F7C3AC"/>
+</svg>
