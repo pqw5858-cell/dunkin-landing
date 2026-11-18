@@ -14,7 +14,6 @@
       theme: '#e43848',      // 배경색
       themeDark: '#961420',  // 배경색 명도만 낮춘 색 (GNB hover)
       point: '#bf0100',      // 버튼 글자색
-      edge: '#a60918',       // 배경 이미지 맨 아래 색 (아래 그라데이션 시작 색)
       product: { x: 1080, y: 132, w: 767 },
       ingredients: [
         ['pistachio-03', -46, -103],
@@ -34,7 +33,6 @@
       theme: '#fe7f01',
       themeDark: '#984c01',
       point: '#ea7500',
-      edge: '#ee4700',       // 배경 이미지 맨 아래 색 (아래 그라데이션 시작 색)
       product: { x: 1018, y: 82, w: 862 },
       ingredients: [
         ['cream-02', -22, -39],
@@ -54,7 +52,6 @@
       theme: '#a37367',
       themeDark: '#63443c',
       point: '#4a2d25',
-      edge: '#67453d',       // 배경 이미지 맨 아래 색 (아래 그라데이션 시작 색)
       product: { x: 1036, y: 104, w: 815 },
       ingredients: [
         ['cookie-02', -6, -89],
@@ -74,7 +71,6 @@
       theme: '#8847cc',
       themeDark: '#512481',
       point: '#570b49',
-      edge: '#442467',       // 배경 이미지 맨 아래 색 (아래 그라데이션 시작 색)
       product: { x: 1042, y: 146, w: 793 },
       ingredients: [
         ['cheesecake-04', -10, -30],
@@ -280,7 +276,6 @@
     root.style.setProperty('--theme', p.theme);
     root.style.setProperty('--theme-dark', p.themeDark);
     root.style.setProperty('--point', p.point);
-    root.style.setProperty('--edge', p.edge);
   };
 
   const setMenu = (index) => {

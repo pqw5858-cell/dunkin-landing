@@ -277,33 +277,6 @@ button { border: 0; background: none; font: inherit; color: inherit; cursor: poi
 }
 
 /* =========================================================
-   메인 비주얼 → BRAND 이음새 그라데이션
-   - 현재 제품 배경 맨 아래 색(--edge)에서 시작 → 같은 색의 연한 톤 → 흰색
-   - --edge를 색상 속성으로 등록해서, 제품이 바뀌면 그라데이션 색도 부드럽게 전환
-     (배경이 위→아래로 덮이는 모션이 바닥에 닿는 시점에 맞춰 살짝 늦게 시작)
-   ========================================================= */
-@property --edge {
-  syntax: '<color>';
-  inherits: true;
-  initial-value: #a60918;
-}
-.visual-fade {
-  height: 280px;
-  margin-bottom: -1px;                  /* 흰 BRAND 배경과 사이 실선 방지 */
-  background: linear-gradient(
-    to bottom,
-    var(--edge) 0%,
-    color-mix(in srgb, var(--edge) 85%, #fff) 12%,
-    color-mix(in srgb, var(--edge) 62%, #fff) 30%,
-    color-mix(in srgb, var(--edge) 35%, #fff) 52%,
-    color-mix(in srgb, var(--edge) 14%, #fff) 74%,
-    color-mix(in srgb, var(--edge) 4%, #fff) 90%,
-    #fff 100%
-  );
-  transition: --edge 500ms ease 450ms;
-}
-
-/* =========================================================
    BRAND
    폰트 위계: 20px 기준 ±4px 단계 (12 / 16 / 20 / 24 / 28 / 32 ... 64)
    ========================================================= */
@@ -431,7 +404,7 @@ button { border: 0; background: none; font: inherit; color: inherit; cursor: poi
 }
 
 /* ---------- ① 히스토리 ---------- */
-.brand-history { padding-top: 140px; }  /* 위 그라데이션(280px)과 합쳐 420px 여백 */
+.brand-history { padding-top: 140px; }  /* 위생점검(크림 배경) 다음, 흰 여백 후 BRAND 제목 */
 .brand__title {
   font-family: 'Cafe24 Decoschool', sans-serif;
   font-weight: normal;
@@ -863,7 +836,7 @@ button { border: 0; background: none; font: inherit; color: inherit; cursor: poi
   --brown: #3b2a25;
   --text: #5a4a44;
   position: relative;
-  padding: 200px 0 160px;
+  padding: 300px 0 160px;               /* 위 배너와 장식 도넛 사이 여백 확보 */
   background: #fff;
   color: var(--brown);
   overflow: hidden;
@@ -953,11 +926,11 @@ button { border: 0; background: none; font: inherit; color: inherit; cursor: poi
 .store__btn:focus-visible { background: var(--point); color: #fff; }
 
 /* 장식 (먼치킨 + 재료 조각) — 스타벅스의 흩뿌린 원두 자리 */
-.deco--store-1 { left: 38%; top: 40px;  width: 90px;  --float-y: 10px; --float-r: 5deg;  --float-dur: 3s;   --float-delay: -.4s; }
-.deco--store-2 { left: 46%; top: 110px; width: 56px;  --float-y: 8px;  --float-r: -6deg; --float-dur: 2.6s; --float-delay: -1.3s; }
-.deco--store-3 { left: 53%; top: 30px;  width: 70px;  --float-y: 12px; --float-r: 4deg;  --float-dur: 3.3s; --float-delay: -2s; }
-.deco--store-4 { left: 60%; top: 100px; width: 52px;  --float-y: 9px;  --float-r: -5deg; --float-dur: 2.8s; --float-delay: -.8s; }
-.deco--store-5 { left: 66%; top: 36px;  width: 60px;  --float-y: 11px; --float-r: 6deg;  --float-dur: 3.1s; --float-delay: -1.6s; }
+.deco--store-1 { left: 38%; top: 140px;  width: 90px;  --float-y: 10px; --float-r: 5deg;  --float-dur: 3s;   --float-delay: -.4s; }
+.deco--store-2 { left: 46%; top: 210px; width: 56px;  --float-y: 8px;  --float-r: -6deg; --float-dur: 2.6s; --float-delay: -1.3s; }
+.deco--store-3 { left: 53%; top: 130px;  width: 70px;  --float-y: 12px; --float-r: 4deg;  --float-dur: 3.3s; --float-delay: -2s; }
+.deco--store-4 { left: 60%; top: 200px; width: 52px;  --float-y: 9px;  --float-r: -5deg; --float-dur: 2.8s; --float-delay: -.8s; }
+.deco--store-5 { left: 66%; top: 136px;  width: 60px;  --float-y: 11px; --float-r: 6deg;  --float-dur: 3.1s; --float-delay: -1.6s; }
 
 /* 매장 건물 일러스트 */
 .store__building {
